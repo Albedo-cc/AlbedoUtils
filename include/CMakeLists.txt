@@ -1,0 +1,7 @@
+# include <AlbedoPattern.hpp>
+
+# Create library
+add_library(${PROJECT_NAME} INTERFACE AlbedoPattern.hpp)
+
+source_group("" FILES AlbedoPattern.hpp)
+target_include_directories(${PROJECT_NAME} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
