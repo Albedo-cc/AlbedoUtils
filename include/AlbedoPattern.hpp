@@ -19,10 +19,17 @@ namespace pattern
             static T singleton;
             return singleton;
         }
+    protected:
         Singleton(const Singleton&) = delete;
         Singleton(Singleton&&) = delete;
         Singleton& operator=(const Singleton&) = delete;
         Singleton& operator=(Singleton&&) = delete;
+    };
+
+    class Command
+    {
+    public:
+        virtual void execute() = 0;
     };
 
 }} // namespace Albedo::pattern
