@@ -14,21 +14,21 @@ namespace time
     class Duration
     {
     public:
-        Precision nanoseconds() { return m_time_stamp.count(); }
-        Precision microseconds() { return std::chrono::duration_cast<std::chrono::microseconds>(m_time_stamp).count(); }
-        Precision milliseconds() { return std::chrono::duration_cast<std::chrono::milliseconds>(m_time_stamp).count(); }
-        Precision seconds() { return std::chrono::duration_cast<std::chrono::seconds>(m_time_stamp).count(); }
-        Precision minutes() { return std::chrono::duration_cast<std::chrono::minutes>(m_time_stamp).count(); }
-        Precision hours() { return std::chrono::duration_cast<std::chrono::hours>(m_time_stamp).count(); }
-        Precision days() { return std::chrono::duration_cast<std::chrono::days>(m_time_stamp).count(); }
+        Precision nanoseconds() { return m_duration.count(); }
+        Precision microseconds() { return std::chrono::duration_cast<std::chrono::microseconds>(m_duration).count(); }
+        Precision milliseconds() { return std::chrono::duration_cast<std::chrono::milliseconds>(m_duration).count(); }
+        Precision seconds() { return std::chrono::duration_cast<std::chrono::seconds>(m_duration).count(); }
+        Precision minutes() { return std::chrono::duration_cast<std::chrono::minutes>(m_duration).count(); }
+        Precision hours() { return std::chrono::duration_cast<std::chrono::hours>(m_duration).count(); }
+        Precision days() { return std::chrono::duration_cast<std::chrono::days>(m_duration).count(); }
     public:
         Duration() = delete;
-        Duration(const std::chrono::steady_clock::duration& time_stamp) :m_time_stamp{ time_stamp } {}
-        Duration(std::chrono::steady_clock::duration&& time_stamp) :m_time_stamp{ time_stamp } {}
-        Duration& operator=(const std::chrono::steady_clock::duration& time_stamp) { m_time_stamp = time_stamp; }
-        Duration& operator=(std::chrono::steady_clock::duration&& time_stamp){ m_time_stamp = time_stamp; }
+        Duration(const std::chrono::steady_clock::duration& time_stamp) :m_duration{ time_stamp } {}
+        Duration(std::chrono::steady_clock::duration&& time_stamp) :m_duration{ time_stamp } {}
+        Duration& operator=(const std::chrono::steady_clock::duration& time_stamp) { m_duration = time_stamp; }
+        Duration& operator=(std::chrono::steady_clock::duration&& time_stamp){ m_duration = time_stamp; }
     private:
-        std::chrono::steady_clock::duration m_time_stamp;
+        std::chrono::steady_clock::duration m_duration;
     };
 
     template<real_number Precision = double>
