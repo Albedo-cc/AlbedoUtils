@@ -40,7 +40,7 @@ namespace time
             m_current_time = std::chrono::high_resolution_clock::now();
         }
 
-        Duration<Precision> split(bool reset = true)
+        Duration<Precision> split(bool reset = false)
         { 
             auto split_time_stamp = std::chrono::high_resolution_clock::now();
             auto time_duration = split_time_stamp - m_current_time;
