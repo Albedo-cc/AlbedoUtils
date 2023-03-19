@@ -14,13 +14,13 @@ namespace time
     class Duration
     {
     public:
-        Precision nanoseconds() { return m_duration.count(); }
-        Precision microseconds() { return std::chrono::duration_cast<std::chrono::microseconds>(m_duration).count(); }
-        Precision milliseconds() { return std::chrono::duration_cast<std::chrono::milliseconds>(m_duration).count(); }
-        Precision seconds() { return std::chrono::duration_cast<std::chrono::seconds>(m_duration).count(); }
-        Precision minutes() { return std::chrono::duration_cast<std::chrono::minutes>(m_duration).count(); }
-        Precision hours() { return std::chrono::duration_cast<std::chrono::hours>(m_duration).count(); }
-        Precision days() { return std::chrono::duration_cast<std::chrono::days>(m_duration).count(); }
+        Precision nanoseconds() const { return m_duration.count(); }
+        Precision microseconds() const { return std::chrono::duration_cast<std::chrono::microseconds>(m_duration).count(); }
+        Precision milliseconds() const { return std::chrono::duration_cast<std::chrono::milliseconds>(m_duration).count(); }
+        Precision seconds() const { return std::chrono::duration_cast<std::chrono::seconds>(m_duration).count(); }
+        Precision minutes() const { return std::chrono::duration_cast<std::chrono::minutes>(m_duration).count(); }
+        Precision hours() const { return std::chrono::duration_cast<std::chrono::hours>(m_duration).count(); }
+        Precision days() const { return std::chrono::duration_cast<std::chrono::days>(m_duration).count(); }
     public:
         Duration() = delete;
         Duration(const std::chrono::steady_clock::duration& time_stamp) :m_duration{ time_stamp } {}
